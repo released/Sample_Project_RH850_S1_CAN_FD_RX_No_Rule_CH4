@@ -2201,7 +2201,7 @@ signed char can_fd_receive_buffer_decode(CAN_REG_TYP * can)
 
     unsigned long re_val = 0U;
     // unsigned short q_number = can_bus_parameter_ch4.CAN_RX_FIFO_BUFFER_NUM;
-    unsigned short q_number = can_bus_parameter_ch4.CAN_RX_FIFO_BUFFER_NUM << 5 ;
+    unsigned short q_number = can_bus_parameter_ch4.CAN_RX_FIFO_BUFFER_NUM << 5;
 
     unsigned char* s = NULL;
 
