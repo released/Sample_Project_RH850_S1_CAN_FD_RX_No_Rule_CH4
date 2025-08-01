@@ -43,6 +43,8 @@ static void can_rrt_set(CAN_REG_TYP * can,
 
 - when CAN_RX_FIFO_BUFFER_NUM is NOT CAN_RX_FIFO_BUFFER_NUMBER0 , need to shift the q_number with multiple words 
 
+	- 0x80 byte (128 byte) , which is 32 WORD
+
 ```c
 volatile CAN_BUS_PARAMETER_T can_bus_parameter_ch4 = 
 {
@@ -52,21 +54,17 @@ volatile CAN_BUS_PARAMETER_T can_bus_parameter_ch4 =
 ```
 
 
-	- num * 32 , or num << 5
-
-
 ```c
-can_fd_receive_buffer_decode
+under signed char can_fd_receive_buffer_decode(CAN_REG_TYP * can)
 
     unsigned short q_number = can_bus_parameter_ch4.CAN_RX_FIFO_BUFFER_NUM << 5;
 
-
-can_fd_receive_fifo_buffer_decode
+under void can_fd_receive_fifo_buffer_decode(CAN_REG_TYP * can, CAN_RX_FIFO_BUFER_NUMBER_e rfi_number)
    
     unsigned short q_number = rfi_number << 5;
 ```
 
-- below is register
+- below is register for reference
 
 ![image](https://github.com/released/Sample_Project_RH850_S1_CAN_FD_RX_No_Rule_CH4/blob/main/Receive_FIFO_register.jpg)
 
