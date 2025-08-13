@@ -7,9 +7,9 @@ update @ 2025/08/01
 
 - UART : RX:P10_9 , TX:P10_10
 
-- CAN1 : RX:P10_7 (polling , no RX rule , accept all ID) , TX:P10_6 (polling)
+- CAN4 : RX:P0_10 (polling , no RX rule , accept all ID) , TX:P0_9 (polling)
 
-- CAN1 : RX:P10_7 (interrupt , no RX rule , accept all ID) , TX:P10_6 (polling)
+- CAN4 : RX:P0_10 (interrupt , no RX rule , accept all ID) , TX:P0_9 (polling)
 
 	- use #define CAN_RX_POLLING , #define CAN_RX_INTERRUPT , to change RX receive method
 
